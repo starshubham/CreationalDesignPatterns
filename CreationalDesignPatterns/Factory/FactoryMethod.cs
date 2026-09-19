@@ -1,12 +1,12 @@
-﻿using CreationalDesignPatterns.Interfaces;
-using CreationalDesignPatterns.Services;
+﻿using CreationalDesignPatterns.Factory.Interfaces;
+using CreationalDesignPatterns.Factory.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CreationalDesignPatterns
+namespace CreationalDesignPatterns.Factory
 {
-    internal class PaymentFactory
+    public class PaymentFactory
     {
         public IPayment CreatePayment(string paymentType)
         {

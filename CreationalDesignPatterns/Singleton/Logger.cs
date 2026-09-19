@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CreationalDesignPatterns
+namespace CreationalDesignPatterns.Singleton
 {
-    internal sealed class Logger
+    public sealed class Logger
     {
         // The class creates its own instance.
         public static readonly Logger _instance = new Logger();

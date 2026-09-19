@@ -1,4 +1,6 @@
-﻿using CreationalDesignPatterns.Interfaces;
+﻿using CreationalDesignPatterns.Factory;
+using CreationalDesignPatterns.Factory.Interfaces;
+using CreationalDesignPatterns.Singleton;
 
 namespace CreationalDesignPatterns
 {
@@ -14,11 +16,11 @@ namespace CreationalDesignPatterns
                 Console.WriteLine("2. Factory Method Pattern");
                 Console.WriteLine("6. Exit");
 
-                Console.Write("Choose Pattern: ");
+                Console.Write("\nChoose Pattern: ");
 
                 string choice = Console.ReadLine();
 
-                //If the online execution environment you're using doesn't provide interactive console input
+                //If you're using the online execution environment and it doesn't provide interactive console input then use below
                 //if (choice == null)
                 //{
                 //    return;
@@ -41,8 +43,8 @@ namespace CreationalDesignPatterns
 
                         Console.WriteLine("\nChoose any one of the below payment method: ");
                         Console.WriteLine("1. UPI" +
-                            "\n2. Credit Card" +
-                            "\n3. PayPal");
+                                        "\n2. Credit Card" +
+                                        "\n3. PayPal");
 
                         Console.Write("Enter your choice: ");
                         string paymentchoice = Console.ReadLine();
@@ -52,10 +54,10 @@ namespace CreationalDesignPatterns
                             "1" => "upi",
                             "2" => "creditcard",
                             "3" => "paypal",
-                            _ => null
+                            _ => "Invalid"
                         };
 
-                        if (paymentType == null)
+                        if (paymentType == "Invalid")
                         {
                             Console.WriteLine("Invalid payment type.");
                             break;
