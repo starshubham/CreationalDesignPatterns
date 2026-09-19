@@ -1,11 +1,11 @@
-﻿using CreationalDesignPatterns.Interfaces;
+﻿using CreationalDesignPatterns.Factory.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CreationalDesignPatterns.Services
+namespace CreationalDesignPatterns.Factory.Services
 {
-    internal class CreditCardPayment: IPayment
+    public class CreditCardPayment: IPayment
     {
         public void Pay(decimal amount)
         {

@@ -1,11 +1,11 @@
-﻿using CreationalDesignPatterns.Interfaces;
+﻿using CreationalDesignPatterns.Factory.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CreationalDesignPatterns.Services
+namespace CreationalDesignPatterns.Factory.Services
 {
-    internal class PayPalPayment: IPayment
+    public class PayPalPayment: IPayment
     {
         public void Pay(decimal amount)
         {

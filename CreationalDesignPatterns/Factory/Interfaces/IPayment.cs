@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CreationalDesignPatterns.Interfaces
+namespace CreationalDesignPatterns.Factory.Interfaces
 {
-    internal interface IPayment
+    public interface IPayment
     {
         void Pay(decimal amount);
     }
