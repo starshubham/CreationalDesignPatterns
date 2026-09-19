@@ -1,4 +1,7 @@
-﻿using CreationalDesignPatterns.Factory;
+﻿using CreationalDesignPatterns.AbstractFactory.Interfaces;
+using CreationalDesignPatterns.AbstractFactory.Services;
+using CreationalDesignPatterns.Builder;
+using CreationalDesignPatterns.Factory;
 using CreationalDesignPatterns.Factory.Interfaces;
 using CreationalDesignPatterns.Singleton;
 
@@ -14,6 +17,8 @@ namespace CreationalDesignPatterns
                 Console.WriteLine("===== Creational Design Patterns =====");
                 Console.WriteLine("1. Singleton Design Pattern");
                 Console.WriteLine("2. Factory Method Pattern");
+                Console.WriteLine("3. Abstract Factory Pattern");
+                Console.WriteLine("4. Builder Pattern");
                 Console.WriteLine("6. Exit");
 
                 Console.Write("\nChoose Pattern: ");
@@ -65,6 +70,54 @@ namespace CreationalDesignPatterns
 
                         IPayment payment = factory.CreatePayment(paymentType);
                         payment.Pay(5000);
+                        break;
+
+                    case "3":
+                        Console.WriteLine("\nSelect Below Abstract Factory.");
+                        Console.WriteLine("1. Windows Factory" +
+                                        "\n2. Mac Factory");
+
+                        Console.Write("\nEnter your choice: ");
+                        string factoryChoice = Console.ReadLine();
+
+                        switch(factoryChoice)
+                        {
+                            case "1":
+                                IUIFactory absfactory1 = new WindowsFactory();
+
+                                IButton winButton = absfactory1.CreateButton();
+                                ICheckbox winCheckbox = absfactory1.CreateCheckbox();
+
+                                winButton.Rendor();
+                                winCheckbox.Rendor();
+                                break;
+
+                            case "2":
+                                IUIFactory absfactory2 = new MacFactory();
+
+                                IButton macButton = absfactory2.CreateButton();
+                                ICheckbox macCheckbox = absfactory2.CreateCheckbox();
+
+                                macButton.Rendor();
+                                macCheckbox.Rendor();
+                                break;
+
+                            default:
+                                Console.WriteLine("Invalid Choice.");
+                                break;
+                        }
+                        break;
+
+                    case "4":
+                        Employee employee = new EmployeeBuilder()
+                            .SetName("Shubham")
+                            .SetRole("Software Engineer")
+                            .SetExperience(5)
+                            .SetLocation("India")
+                            .SetSalary(150000)
+                            .Build();
+
+                        employee.Display();
                         break;
 
                     case "6":
