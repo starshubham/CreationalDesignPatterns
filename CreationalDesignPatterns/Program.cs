@@ -3,6 +3,7 @@ using CreationalDesignPatterns.AbstractFactory.Services;
 using CreationalDesignPatterns.Builder;
 using CreationalDesignPatterns.Factory;
 using CreationalDesignPatterns.Factory.Interfaces;
+using CreationalDesignPatterns.Prototype;
 using CreationalDesignPatterns.Singleton;
 
 namespace CreationalDesignPatterns
@@ -19,6 +20,7 @@ namespace CreationalDesignPatterns
                 Console.WriteLine("2. Factory Method Pattern");
                 Console.WriteLine("3. Abstract Factory Pattern");
                 Console.WriteLine("4. Builder Pattern");
+                Console.WriteLine("5. Prototype Pattern");
                 Console.WriteLine("6. Exit");
 
                 Console.Write("\nChoose Pattern: ");
@@ -118,6 +120,22 @@ namespace CreationalDesignPatterns
                             .Build();
 
                         employee.Display();
+                        break;
+
+                    case "5":
+                        PEmployee employee1 = new PEmployee
+                        {
+                            Name = "Shubham",
+                            Department = "IT",
+                            Location = "India"
+                        };
+
+                        PEmployee employee2 = employee1.Clone();
+
+                        employee2.Name = "Rahul";
+
+                        employee1.Display();
+                        employee2.Display();
                         break;
 
                     case "6":
